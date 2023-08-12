@@ -1,0 +1,99 @@
+Basic:
+    canvas:
+        Color:
+            rgb:0.6,0.8,1
+        Rectangle:
+            size:self.size            
+    orientation:"vertical"
+    padding:[5,5,5,5]
+    #spacing:0.1
+    GridLayout:
+        cols:2
+        Label:
+            text:"TREND ANALYZER"
+            color:0.6,0,0
+            size_hint:1,0.1
+            font_size: '18px'
+            font_type:'bold'
+            pos_hint:{"center_x":0.5,"center_y":0.5}
+        AnchorLayout:
+            anchor_x:'left'
+            Button:
+                background_color:(1,0,0,1)
+                size:(32,32)
+                text:"CLICK ME"
+                font_type:'bold'
+                font:'impact'
+                font_size:'18px'
+                color:0,1,0
+                size_hint:0.5,0.2
+                on_press:root.analyzer()
+    GridLayout:
+        rows:1
+        Label:
+            text:'PINBAR'
+            color:0.8,0,0.4
+            font_size:'27px'
+            font_type: 'bold'
+            font:'times new roman'
+        Label:
+            text:'BREAKOUTS'
+            color:0.8,0,0.4
+            font_size:'27px'
+            font_type: 'bold'
+            font:'times new roman'
+    BoxLayout:
+        orientation:'horizontal'
+        ScrollView:
+            do_scroll_x:False
+            do_scroll_y:True
+            BoxLayout:
+                canvas:
+                    Color:
+                        rgb:1,1,0
+                        Rectangle:
+                            size:self.size  
+                size_hint_y:None
+                width:400
+                height:400
+                bar_width:'12dp'            
+                Label:
+                    id:pinbar
+                    text:""
+                    color:0.8,1,0.4
+                    font_size: '18px'
+                    font_type:'bold'
+                    font:'arial'
+                    size_hint:1,1                
+        ScrollView:
+            do_scroll_x:False
+            do_scroll_y:True
+            #effect_cls:'ScrollEffect'
+            BoxLayout:
+                canvas:
+                    Color:
+                        rgb:1,1,0
+                        Rectangle:
+                            size:self.size
+                size_hint_y:None
+                width:400
+                height:400
+                bar_width:'12dp'
+                Label:
+                    id:trendbar
+                    text:""
+                    color:0.8,1,0.4
+                    font_size: '18px'
+                    font_type:'bold'
+                    font:'arial'
+                    size_hint:1,1
+    BoxLayout:
+        Label:
+            text:'Shikhar Solutions'
+            size_hint:1,0.1
+
+                
+
+    
+        
+    
