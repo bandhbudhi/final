@@ -1,0 +1,28 @@
+name: Build APK
+
+on:
+  push:
+    branches:
+      - main  # Change this to the branch you want to trigger the build on
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+      
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.x  # Use the version of Python you need
+    
+    - name: Install dependencies
+      run: |
+        pip install buildozer  # Install buildozer
+        pip install -r requirements.txt  # Install your project's dependencies
+    
+    - name: Build APK
+      run: |
+        buildozer android debug  # Build the APK using buildozer
